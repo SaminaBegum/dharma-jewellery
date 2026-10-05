@@ -97,13 +97,16 @@ export function SiteFooter() {
     <img
       src={dharmaLogo}
       alt="Dharma"
-     className="h-12 w-auto object-contain"
+      className="h-12 w-auto object-contain"
     />
 
   
   </div>
 
-  
+  <p className="mt-2 text-xs text-foreground/70">
+    More Than Jewellery.<br />
+    A Deeper You.
+  </p>
 </div>
         {cols.map(([h, ls]) => (
           <div key={h}>
