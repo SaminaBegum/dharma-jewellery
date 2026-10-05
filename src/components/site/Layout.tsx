@@ -92,11 +92,19 @@ export function SiteFooter() {
   return (
     <footer className="border-t border-border bg-background px-6 py-14 lg:px-12">
       <div className="mx-auto grid max-w-[1440px] grid-cols-2 gap-10 md:grid-cols-[1fr_repeat(4,auto)_1.3fr]">
-        <div className="col-span-2 md:col-span-1">
-          <span className="font-serif text-5xl italic text-gold">D</span>
-          <p className="font-serif text-xl tracking-[0.2em]">DHARMA</p>
-          <p className="mt-2 text-xs text-foreground/70">More Than Jewellery.<br />A Deeper You.</p>
-        </div>
+       <div className="col-span-2 md:col-span-1">
+  <div className="flex items-center gap-3">
+    <img
+      src={dharmaLogo}
+      alt="Dharma"
+     className="h-12 w-auto object-contain"
+    />
+
+  
+  </div>
+
+  
+</div>
         {cols.map(([h, ls]) => (
           <div key={h}>
             <p className="eyebrow text-gold">{h}</p>
