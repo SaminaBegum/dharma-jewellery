@@ -30,6 +30,10 @@ import necklace from "@/assets/necklace.jpg";
 import ring from "@/assets/ring.jpg";
 import earrings from "@/assets/earrings.jpg";
 import bracelet from "@/assets/bracelet.jpg";
+
+import signature1 from "@/assets/signature-d.jpg";
+import signature2 from "@/assets/signature-d.jpg";
+import signature3 from "@/assets/signature-d.jpg";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
@@ -57,60 +61,904 @@ function Index() {
     <Shell><div id="top" className="overflow-x-hidden">
       {/* HEADER */}
       {/* HERO */}
-      <section className="relative min-h-[92vh] overflow-hidden">
-        <img src={hero} alt="Woman wearing Dharma diamond earrings and Signature D pendant" width={1920} height={1088} className="absolute inset-0 h-full w-full object-cover object-[70%_center]" />
-        <div className="absolute inset-0 bg-gradient-to-r from-background via-background/60 to-transparent" />
-        <div className="relative mx-auto flex min-h-[92vh] max-w-[1440px] flex-col justify-center px-6 pt-28 pb-16 lg:px-12">
-          <p className="eyebrow animate-fade-in text-gold">A Symbol of Your Story</p>
-          <h1 className="mt-5 max-w-xl animate-fade-in text-5xl leading-[1.02] tracking-wide uppercase md:text-7xl">
-            DHARMA<br />JEWELLERY<br /><span className="text-gold">A Deeper You.</span>
-          </h1>
-          <p className="mt-6 max-w-sm text-sm leading-relaxed text-foreground/80">Timeless designs. Deeper meanings. Jewellery that becomes a part of you.</p>
-          <div className="mt-8 flex flex-wrap items-center gap-6">
-            <Link to="/collections" className="btn-gold">Explore Collections <ArrowRight className="h-3.5 w-3.5" /></Link>
-            <Link to="/our-story" className="eyebrow flex items-center gap-3 hover:text-gold">
-              <span className="grid h-10 w-10 place-items-center rounded-full border border-foreground/60"><Play className="h-3.5 w-3.5" /></span>Our Story
-            </Link>
-          </div>
-          <ul className="absolute right-12 top-1/3 hidden space-y-2 text-right lg:block">
-            {["Heritage", "Craftsmanship", "Modern Luxury", "Timeless Beauty"].map((t) => (
-              <li key={t} className="eyebrow text-foreground/80">{t}</li>
-            ))}
-          </ul>
+      {/* HERO */}
+<section className="relative w-full overflow-hidden bg-black text-white">
+  <div className="relative min-h-[620px] w-full lg:min-h-[680px] xl:min-h-[720px]">
+
+    {/* HERO IMAGE */}
+    <img
+      src={hero}
+      alt="Woman wearing Dharma jewellery"
+      width={1920}
+      height={1088}
+      className="
+        absolute inset-0
+        h-full w-full
+        object-cover
+        object-center
+        scale-[1.02]
+      "
+    />
+
+    {/* DARK LEFT OVERLAY */}
+    <div
+      className="
+        absolute inset-0
+        bg-gradient-to-r
+        from-black via-black/75
+        via-black/45
+        to-transparent
+      "
+    />
+
+    {/* BOTTOM DARK GRADIENT */}
+    <div
+      className="
+        absolute inset-x-0 bottom-0 h-48
+        bg-gradient-to-t
+        from-black/80
+        to-transparent
+      "
+    />
+
+    {/* RED LUXURY GLOW */}
+    <div
+      className="
+        pointer-events-none
+        absolute left-[-10%] top-0
+        h-full w-[45%]
+        bg-[radial-gradient(circle_at_center,rgba(100,0,0,0.35),transparent_65%)]
+      "
+    />
+
+    {/* CONTENT */}
+    <div
+      className="
+        relative z-10 mx-auto
+        flex h-full min-h-[620px]
+        max-w-[1440px]
+        items-center
+        px-6 pb-24 pt-24
+        sm:px-8
+        lg:min-h-[680px]
+        lg:px-12
+        xl:min-h-[720px]
+      "
+    >
+
+      {/* LEFT CONTENT */}
+      <div className="w-full max-w-[620px]">
+
+        {/* EYEBROW */}
+        <p
+          className="
+            mb-4
+            text-[9px]
+            font-medium
+            uppercase
+            tracking-[0.25em]
+            text-white/80
+            sm:text-[10px]
+          "
+        >
+          A Symbol of Your Story
+        </p>
+
+        {/* TITLE */}
+        <h1
+          className="
+            max-w-[610px]
+            font-serif
+            text-[42px]
+            font-light
+            uppercase
+            leading-[0.92]
+            tracking-[-0.02em]
+            text-white
+            sm:text-[52px]
+            md:text-[64px]
+            lg:text-[76px]
+            xl:text-[82px]
+          "
+        >
+          More Than
+          <br />
+
+          Jewellery,
+          <br />
+
+          <span className="text-[#d9b36c]">
+            A Deeper You.
+          </span>
+        </h1>
+
+        {/* DESCRIPTION */}
+        <p
+          className="
+            mt-5
+            max-w-[430px]
+            text-[12px]
+            leading-[1.55]
+            text-white/75
+            sm:text-[13px]
+            md:text-sm
+          "
+        >
+          Timeless designs. Deeper meanings. Jewellery
+          <br className="hidden sm:block" />
+          that becomes a part of you.
+        </p>
+
+        {/* BUTTONS */}
+        <div
+          className="
+            mt-7
+            flex
+            flex-wrap
+            items-center
+            gap-5
+            sm:gap-7
+          "
+        >
+
+          {/* EXPLORE */}
+          <Link
+            to="/collections"
+            className="
+              group
+              inline-flex
+              h-11
+              items-center
+              gap-3
+              bg-[#f3dca9]
+              px-5
+              text-[10px]
+              font-semibold
+              uppercase
+              tracking-[0.14em]
+              text-black
+              transition-all
+              duration-300
+              hover:bg-white
+              sm:h-12
+              sm:px-6
+            "
+          >
+            Explore Collections
+
+            <ArrowRight
+              className="
+                h-3.5
+                w-3.5
+                transition-transform
+                duration-300
+                group-hover:translate-x-1
+              "
+            />
+          </Link>
+
+          {/* OUR STORY */}
+          <Link
+            to="/our-story"
+            className="
+              group
+              flex
+              items-center
+              gap-3
+              text-[10px]
+              font-medium
+              uppercase
+              tracking-[0.16em]
+              text-white
+            "
+          >
+            <span
+              className="
+                grid
+                h-11
+                w-11
+                place-items-center
+                rounded-full
+                border
+                border-white/60
+                transition-all
+                duration-300
+                group-hover:border-[#d9b36c]
+                group-hover:bg-white/10
+              "
+            >
+              <Play
+                className="ml-0.5 h-3 w-3 fill-white"
+              />
+            </span>
+
+            Watch Our Story
+          </Link>
         </div>
-      </section>
+      </div>
+
+      {/* RIGHT TOP FEATURES */}
+      <div
+        className="
+          absolute
+          right-6
+          top-24
+          hidden
+          text-right
+          lg:block
+          xl:right-12
+        "
+      >
+        <div className="space-y-1.5">
+          {[
+            "Heritage",
+            "Craftsmanship",
+            "Modern Luxury",
+            "Timeless Beauty",
+          ].map((item) => (
+            <p
+              key={item}
+              className="
+                text-[9px]
+                font-medium
+                uppercase
+                tracking-[0.16em]
+                text-white/85
+              "
+            >
+              {item}
+            </p>
+          ))}
+        </div>
+      </div>
+
+      {/* RIGHT DHARMA CARD */}
+      <div
+        className="
+          absolute
+          bottom-24
+          right-6
+          hidden
+          h-[170px]
+          w-[235px]
+          overflow-hidden
+          border
+          border-white/20
+          bg-black/20
+          backdrop-blur-[2px]
+          lg:block
+          xl:right-12
+        "
+      >
+        {/* Small image */}
+        <img
+          src={hero}
+          alt=""
+          className="
+            absolute
+            inset-0
+            h-full
+            w-full
+            object-cover
+            object-[75%_center]
+            opacity-80
+          "
+        />
+
+        {/* Overlay */}
+        <div
+          className="
+            absolute
+            inset-0
+            bg-black/45
+          "
+        />
+
+        {/* Card content */}
+        <div
+          className="
+            relative
+            flex
+            h-full
+            flex-col
+            items-center
+            justify-center
+          "
+        >
+          <span
+            className="
+              grid
+              h-12
+              w-12
+              place-items-center
+              rounded-full
+              border
+              border-white/60
+              bg-black/20
+            "
+          >
+            <Play
+              className="ml-0.5 h-3 w-3 fill-white"
+            />
+          </span>
+
+          <p
+            className="
+              mt-3
+              text-[9px]
+              uppercase
+              tracking-[0.18em]
+              text-white
+            "
+          >
+            Step Into
+          </p>
+
+          <p
+            className="
+              text-[9px]
+              uppercase
+              tracking-[0.18em]
+              text-white
+            "
+          >
+            Dharma
+          </p>
+        </div>
+      </div>
+    </div>
+
+    {/* LEFT SLIDER INDICATORS */}
+    <div
+      className="
+        absolute
+        left-4
+        top-1/2
+        z-20
+        hidden
+        -translate-y-1/2
+        flex-col
+        items-center
+        gap-4
+        sm:flex
+        lg:left-6
+      "
+    >
+      {["01", "02", "03", "04", "05"].map(
+        (number, index) => (
+          <div
+            key={number}
+            className="flex items-center gap-2"
+          >
+            <span
+              className={`
+                text-[7px]
+                tracking-widest
+                ${
+                  index === 0
+                    ? "text-white"
+                    : "text-white/30"
+                }
+              `}
+            >
+              {number}
+            </span>
+
+            <span
+              className={`
+                block
+                h-[1px]
+                ${
+                  index === 0
+                    ? "w-4 bg-white"
+                    : "w-2 bg-white/30"
+                }
+              `}
+            />
+          </div>
+        )
+      )}
+    </div>
+
+    {/* BOTTOM COLLECTION THUMBNAILS */}
+    <div
+      className="
+        absolute
+        bottom-8
+        left-6
+        z-20
+        flex
+        items-center
+        gap-3
+        sm:left-12
+      "
+    >
+      {[1, 2, 3].map((item) => (
+        <button
+          key={item}
+          type="button"
+          className="
+            h-10
+            w-10
+            overflow-hidden
+            rounded-full
+            border
+            border-white/50
+            transition-transform
+            duration-300
+            hover:scale-110
+            sm:h-12
+            sm:w-12
+          "
+        >
+          <img
+            src={hero}
+            alt={`Collection ${item}`}
+            className="
+              h-full
+              w-full
+              object-cover
+              object-[65%_center]
+            "
+          />
+        </button>
+      ))}
+    </div>
+
+    {/* BOTTOM PROGRESS LINE */}
+    <div
+      className="
+        absolute
+        bottom-0
+        left-0
+        z-20
+        h-[2px]
+        w-full
+        bg-white/20
+      "
+    >
+      <div
+        className="
+          h-full
+          w-[20%]
+          bg-[#d9b36c]
+        "
+      />
+    </div>
+
+  </div>
+</section>
 
       {/* COLLECTIONS + SIGNATURE */}
-      <section id="collections" className="grid lg:grid-cols-[1.4fr_1fr]">
-        <div className="bg-ivory px-6 py-14 text-ivory-foreground lg:px-12">
-          <div className="flex items-center justify-between">
-            <h2 className="text-2xl tracking-[0.12em] uppercase">Explore Our Collections —</h2>
-            <Link to="/collections" className="eyebrow flex items-center gap-2">View All <ArrowRight className="h-4 w-4" /></Link>
+      {/* COLLECTIONS + SIGNATURE */}
+<section
+  id="collections"
+  className="grid w-full grid-cols-1 overflow-hidden lg:grid-cols-[58%_42%]"
+>
+  {/* ================= LEFT : COLLECTIONS ================= */}
+  <div className="bg-ivory px-5 py-10 text-ivory-foreground sm:px-8 sm:py-12 lg:px-10 lg:py-14 xl:px-12">
+    {/* Heading */}
+    <div className="flex items-center justify-between gap-4">
+      <h2 className="text-xl tracking-[0.10em] uppercase sm:text-2xl">
+        Explore Our Collections —
+      </h2>
+
+      <Link
+        to="/collections"
+        className="eyebrow flex shrink-0 items-center gap-2 text-xs sm:text-sm"
+      >
+        View All
+        <ArrowRight className="h-4 w-4" />
+      </Link>
+    </div>
+
+    {/* Collection Cards */}
+    <div className="mt-7 grid grid-cols-2 gap-3 sm:mt-8 sm:gap-4 md:grid-cols-4">
+      {collections.map((c) => (
+        <Link
+          key={c.name}
+          to="/collections"
+          search={{ category: c.name }}
+          className="group arch relative block aspect-[3/5] overflow-hidden"
+        >
+          <img
+            src={c.img}
+            alt={c.name}
+            loading="lazy"
+            width={768}
+            height={960}
+            className="img-zoom h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
+          />
+
+          {/* Bottom gradient */}
+          <div className="absolute inset-0 bg-gradient-to-t from-background/90 via-transparent to-transparent" />
+
+          {/* Card content */}
+          <div className="absolute inset-x-0 bottom-0 flex items-end justify-between p-3 text-foreground sm:p-4">
+            <div>
+              <p className="font-serif text-base uppercase tracking-wider sm:text-lg">
+                {c.name}
+              </p>
+
+              <p className="text-[0.58rem] text-foreground/70 sm:text-[0.65rem]">
+                {c.sub}
+              </p>
+            </div>
+
+            <ArrowRight className="h-4 w-4 shrink-0 text-gold" />
           </div>
-          <div className="mt-8 grid grid-cols-2 gap-4 md:grid-cols-4">
-            {collections.map((c) => (
-              <Link key={c.name} to="/collections" search={{ category: c.name }} className="group arch relative block aspect-[3/5] overflow-hidden">
-                <img src={c.img} alt={c.name} loading="lazy" width={768} height={960} className="img-zoom h-full w-full object-cover" />
-                <div className="absolute inset-0 bg-gradient-to-t from-background/90 via-transparent to-transparent" />
-                <div className="absolute inset-x-0 bottom-0 flex items-end justify-between p-4 text-foreground">
-                  <div><p className="font-serif text-lg uppercase tracking-wider">{c.name}</p><p className="text-[0.65rem] text-foreground/70">{c.sub}</p></div>
-                  <ArrowRight className="h-4 w-4 text-gold" />
-                </div>
-              </Link>
-            ))}
-          </div>
+        </Link>
+      ))}
+    </div>
+  </div>
+
+  {/* ================= RIGHT : SIGNATURE D ================= */}
+  <div className="relative min-h-[520px] overflow-hidden bg-wine sm:min-h-[560px] lg:min-h-[520px] xl:min-h-[580px]">
+    
+    {/* Signature D Background Image */}
+    <img
+      src={signature}
+      alt="Signature D rose gold diamond pendant"
+      loading="lazy"
+      width={1024}
+      height={1024}
+      className="
+        absolute
+        inset-0
+        h-full
+        w-full
+        object-cover
+        object-[72%_center]
+        opacity-100
+        transition-transform
+        duration-700
+        hover:scale-[1.02]
+      "
+    />
+
+    {/* LEFT DARK FADE - keeps text readable without hiding artwork */}
+    <div
+      className="
+        absolute
+        inset-0
+        bg-gradient-to-r
+        from-wine/95
+        via-wine/65
+        via-45%
+        to-transparent
+      "
+    />
+
+    {/* Slight bottom fade */}
+    <div
+      className="
+        absolute
+        inset-x-0
+        bottom-0
+        h-32
+        bg-gradient-to-t
+        from-wine/70
+        to-transparent
+      "
+    />
+
+    {/* ================= CONTENT ================= */}
+    <div
+      className="
+        relative
+        z-10
+        flex
+        h-full
+        min-h-[520px]
+        flex-col
+        justify-center
+        px-7
+        py-12
+        sm:px-10
+        lg:min-h-[520px]
+        lg:px-8
+        xl:px-12
+      "
+    >
+      {/* THE */}
+      <p
+        className="
+          font-serif
+          text-lg
+          tracking-[0.22em]
+          text-gold
+          sm:text-xl
+        "
+      >
+        THE
+      </p>
+
+      {/* Signature D */}
+      <h2
+        className="
+          mt-1
+          max-w-[230px]
+          font-serif
+          text-3xl
+          font-normal
+          uppercase
+          leading-[0.95]
+          tracking-[0.06em]
+          text-foreground
+          sm:text-4xl
+          lg:text-[2.7rem]
+          xl:text-5xl
+        "
+      >
+        Signature D
+      </h2>
+
+      {/* Description */}
+      <p
+        className="
+          mt-4
+          max-w-[190px]
+          text-[0.72rem]
+          leading-relaxed
+          text-foreground/80
+          sm:text-sm
+        "
+      >
+        A distinctive expression of identity, elegance and individuality.
+      </p>
+
+      {/* Discover */}
+      <Link
+        to="/product/$slug"
+        params={{ slug: "signature-d-pendant" }}
+        className="
+          eyebrow
+          mt-5
+          flex
+          w-fit
+          items-center
+          gap-2
+          text-[0.65rem]
+          text-gold
+          transition-opacity
+          hover:opacity-80
+          sm:text-xs
+        "
+      >
+        DISCOVER NOW
+        <ArrowRight className="h-3.5 w-3.5" />
+      </Link>
+
+      {/* ================= 01 - 04 FEATURES ================= */}
+      <div
+        className="
+          absolute
+          right-5
+          top-1/2
+          hidden
+          -translate-y-1/2
+          flex-col
+          gap-5
+          lg:flex
+          xl:right-7
+        "
+      >
+        {/* 01 */}
+        <div className="flex items-center gap-3">
+          <span
+            className="
+              flex
+              h-6
+              w-6
+              items-center
+              justify-center
+              rounded-full
+              border
+              border-gold/60
+              text-[0.5rem]
+              text-gold
+            "
+          >
+            01
+          </span>
+
+          <span className="text-[0.55rem] uppercase tracking-wider text-foreground/80">
+            Identity
+          </span>
         </div>
-        <div className="relative min-h-[520px] overflow-hidden bg-wine">
-          <img src={signature} alt="Signature D rose gold diamond pendant" loading="lazy" width={1024} height={1024} className="absolute inset-0 h-full w-full object-cover object-right opacity-90" />
-          <div className="absolute inset-0 bg-gradient-to-r from-wine via-wine/50 to-transparent" />
-          <div className="relative flex h-full flex-col justify-center p-10">
-            <p className="font-serif text-xl tracking-[0.2em] text-gold">THE</p>
-            <h2 className="text-5xl uppercase tracking-wide">Signature D</h2>
-            <p className="mt-4 max-w-[14rem] text-sm text-foreground/80">A distinctive expression of identity, elegance and individuality.</p>
-            <Link to="/product/$slug" params={{ slug: "signature-d-pendant" }} className="eyebrow mt-6 flex items-center gap-2 text-gold">Discover Now <ArrowRight className="h-4 w-4" /></Link>
-          </div>
+
+        {/* 02 */}
+        <div className="flex items-center gap-3">
+          <span
+            className="
+              flex
+              h-6
+              w-6
+              items-center
+              justify-center
+              rounded-full
+              border
+              border-gold/60
+              text-[0.5rem]
+              text-gold
+            "
+          >
+            02
+          </span>
+
+          <span className="text-[0.55rem] uppercase tracking-wider text-foreground/80">
+            Elegance
+          </span>
         </div>
-      </section>
+
+        {/* 03 */}
+        <div className="flex items-center gap-3">
+          <span
+            className="
+              flex
+              h-6
+              w-6
+              items-center
+              justify-center
+              rounded-full
+              border
+              border-gold/60
+              text-[0.5rem]
+              text-gold
+            "
+          >
+            03
+          </span>
+
+          <span className="text-[0.55rem] uppercase tracking-wider text-foreground/80">
+            Individuality
+          </span>
+        </div>
+
+        {/* 04 */}
+        <div className="flex items-center gap-3">
+          <span
+            className="
+              flex
+              h-6
+              w-6
+              items-center
+              justify-center
+              rounded-full
+              border
+              border-gold/60
+              text-[0.5rem]
+              text-gold
+            "
+          >
+            04
+          </span>
+
+          <span className="max-w-[60px] text-[0.55rem] uppercase leading-tight tracking-wider text-foreground/80">
+            A Timeless Creation
+          </span>
+        </div>
+      </div>
+
+      {/* ================= 360 VIEW ================= */}
+     {/* ================= 360 VIEW + 3 IMAGES ================= */}
+<div
+  className="
+    absolute
+    bottom-5
+    left-6
+    z-20
+    flex
+    items-center
+    gap-3
+    sm:left-8
+    sm:gap-4
+    lg:left-8
+    xl:left-12
+  "
+>
+  {/* 360 Play Button */}
+  <button
+    type="button"
+    className="
+      flex
+      h-10
+      w-10
+      shrink-0
+      items-center
+      justify-center
+      rounded-full
+      border
+      border-foreground/60
+      bg-black/30
+      backdrop-blur-sm
+      transition-all
+      duration-300
+      hover:border-gold
+      hover:bg-black/50
+      sm:h-11
+      sm:w-11
+    "
+    aria-label="View Signature D in 360 degrees"
+  >
+    <span className="ml-0.5 text-[10px] text-foreground">
+      ▶
+    </span>
+  </button>
+
+  {/* 3 Preview Images */}
+  <div className="flex items-center gap-1.5 sm:gap-2">
+    {[signature1, signature2, signature3].map((image, index) => (
+      <button
+        key={index}
+        type="button"
+        className="
+          group
+          relative
+          h-9
+          w-9
+          overflow-hidden
+          border
+          border-foreground/30
+          bg-black/20
+          transition-all
+          duration-300
+          hover:border-gold
+          sm:h-11
+          sm:w-11
+        "
+        aria-label={`Signature D view ${index + 1}`}
+      >
+        <img
+          src={image}
+          alt={`Signature D view ${index + 1}`}
+          className="
+            h-full
+            w-full
+            object-cover
+            transition-transform
+            duration-500
+            group-hover:scale-110
+          "
+        />
+
+        {/* Dark overlay */}
+        <span className="absolute inset-0 bg-black/10 transition-colors group-hover:bg-transparent" />
+      </button>
+    ))}
+  </div>
+
+  {/* 360° Text */}
+  <span
+    className="
+      hidden
+      text-[0.55rem]
+      uppercase
+      tracking-[0.15em]
+      text-foreground/80
+      sm:block
+    "
+  >
+    360° View
+  </span>
+</div>
+
+      {/* Small decorative line */}
+      <div
+        className="
+          absolute
+          bottom-7
+          right-7
+          hidden
+          h-px
+          w-16
+          bg-gold/60
+          sm:block
+        "
+      />
+    </div>
+  </div>
+</section>
 
       {/* STORY */}
       <section id="story" className="grid bg-cocoa lg:grid-cols-[1fr_1.6fr_0.9fr]">
