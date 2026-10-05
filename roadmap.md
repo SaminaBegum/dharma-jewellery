@@ -1,0 +1,3 @@
+- [ ] Connect the uploaded homepage navigation and featured products to inner shopping pages.
+- [ ] Polish collections, details, cart, wishlist, checkout, and orders for mobile and desktop.
+- [ ] Verify the customer journey and make clear that orders are browser-local demonstrations.
