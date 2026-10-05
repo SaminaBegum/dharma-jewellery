@@ -31,7 +31,11 @@ export function SiteHeader() {
   useEffect(() => setOpen(false), [pathname]);
 
   return (
-    <header className={`fixed inset-x-0 top-0 z-40 transition-colors duration-500 ${solid ? "border-b border-border bg-background/95 backdrop-blur" : ""}`}>
+
+<header
+  className={`fixed inset-x-0 top-0 z-40 border-b border-border transition-colors duration-500 bg-[oklch(28%_.1_15)]`}
+>
+
       <div className="mx-auto grid max-w-[1440px] grid-cols-[minmax(0,1fr)_auto] items-center gap-3 px-5 py-4 lg:flex lg:justify-between lg:px-12">
        <Link to="/" className="flex shrink-0 items-center">
   <img
@@ -42,7 +46,7 @@ export function SiteHeader() {
 </Link>
         <nav className="hidden gap-6 lg:flex">
           {navLinks.map((n) => (
-            <Link key={n.to} to={n.to} activeOptions={{ exact: n.to === "/" }} activeProps={{ className: "text-gold" }} className="eyebrow text-[#f1e6d6] transition hover:text-gold">
+            <Link key={n.to} to={n.to} activeOptions={{ exact: n.to === "/" }} activeProps={{ className: "text-gold" }} className="eyebrow text-foreground/85 transition hover:text-gold">
               {n.label}
             </Link>
           ))}
@@ -90,107 +94,45 @@ export function SiteFooter() {
     ["Customer Care", [["My Orders", "/orders"], ["My Bag", "/cart"], ["Stores", "/stores"]]],
   ] as const;
   return (
- 
-<footer className="border-t border-border bg-background px-6 py-14 lg:px-12">
-  <div className="mx-auto grid max-w-[1440px] grid-cols-2 gap-10 md:grid-cols-[1fr_repeat(4,auto)_1.3fr]">
 
-    <div className="col-span-2 md:col-span-1">
-      <div className="flex items-center gap-3">
-        <img
-          src={dharmaLogo}
-          alt="Dharma"
-          className="h-12 w-auto object-contain"
-        />
-      </div>
+<footer className="border-t border-border bg-[oklch(28%_.1_15)] px-6 py-14 lg:px-12">
 
-      <p className="mt-2 text-xs text-[#f1e6d6]">
-        More Than Jewellery.<br />
-        A Deeper You.
-      </p>
-    </div>
+      <div className="mx-auto grid max-w-[1440px] grid-cols-2 gap-10 md:grid-cols-[1fr_repeat(4,auto)_1.3fr]">
+       <div className="col-span-2 md:col-span-1">
+  <div className="flex items-center gap-3">
+    <img
+      src={dharmaLogo}
+      alt="Dharma"
+      className="h-12 w-auto object-contain"
+    />
 
-    {cols.map(([h, ls]) => (
-      <div key={h}>
-        <p className="eyebrow text-gold">{h}</p>
-
-        <ul className="mt-4 space-y-2 text-xs text-[#f1e6d6]">
-          {ls.map(([l, to]) => (
-            <li key={l}>
-              {h === "Shop" ? (
-                <Link
-                  to="/collections"
-                  search={{ category: to }}
-                  className="text-[#f1e6d6] transition hover:text-gold"
-                >
-                  {l}
-                </Link>
-              ) : (
-                <Link
-                  to={
-                    to as
-                      | "/our-story"
-                      | "/bespoke"
-                      | "/journal"
-                      | "/experience"
-                      | "/stores"
-                      | "/wishlist"
-                      | "/orders"
-                      | "/cart"
-                  }
-                  className="text-[#f1e6d6] transition hover:text-gold"
-                >
-                  {l}
-                </Link>
-              )}
-            </li>
-          ))}
-        </ul>
-      </div>
-    ))}
-
-    <div className="col-span-2 md:col-span-1">
-      <p className="eyebrow text-gold">
-        Enter the World of Dharma
-      </p>
-
-      <form
-        onSubmit={(e) => {
-          e.preventDefault();
-          e.currentTarget.reset();
-        }}
-        className="mt-4 flex border border-border"
-      >
-        <input
-          type="email"
-          required
-          placeholder="Your email address"
-          aria-label="Email"
-          className="min-w-0 flex-1 bg-transparent px-3 py-2 text-xs text-[#f1e6d6 !important] outline-none placeholder:text-[#f1e6d6]/60"
-        />
-
-        <Button
-          variant="gold"
-          type="submit"
-          className="rounded-none"
-        >
-          Subscribe
-        </Button>
-      </form>
-
-      <div className="mt-5 flex gap-4 text-[#f1e6d6]">
-        <Instagram className="h-4 w-4" />
-        <Facebook className="h-4 w-4" />
-        <Youtube className="h-4 w-4" />
-      </div>
-
-      <p className="mt-5 text-[0.65rem] text-[#f1e6d6 !important]/60">
-        © 2026 Dharma Jewellery. All Rights Reserved.
-      </p>
-    </div>
-
+  
   </div>
-</footer>
 
+  <p className="mt-2 text-xs text-foreground/70">
+    More Than Jewellery.<br />
+    A Deeper You.
+  </p>
+</div>
+        {cols.map(([h, ls]) => (
+          <div key={h}>
+            <p className="eyebrow text-gold">{h}</p>
+            <ul className="mt-4 space-y-2 text-xs text-foreground/75">
+              {ls.map(([l, to]) => <li key={l}>{h === "Shop" ? <Link to="/collections" search={{ category: to }} className="hover:text-gold">{l}</Link> : <Link to={to as "/our-story" | "/bespoke" | "/journal" | "/experience" | "/stores" | "/wishlist" | "/orders" | "/cart"} className="hover:text-gold">{l}</Link>}</li>)}
+            </ul>
+          </div>
+        ))}
+        <div className="col-span-2 md:col-span-1">
+          <p className="eyebrow text-gold">Enter the World of Dharma</p>
+          <form onSubmit={(e) => { e.preventDefault(); e.currentTarget.reset(); }} className="mt-4 flex border border-border">
+            <input type="email" required placeholder="Your email address" aria-label="Email" className="min-w-0 flex-1 bg-transparent px-3 py-2 text-xs outline-none" />
+            <Button variant="gold" type="submit" className="rounded-none">Subscribe</Button>
+          </form>
+          <div className="mt-5 flex gap-4 text-foreground/80"><Instagram className="h-4 w-4" /><Facebook className="h-4 w-4" /><Youtube className="h-4 w-4" /></div>
+          <p className="mt-5 text-[0.65rem] text-foreground/50">© 2026 Dharma Jewellery. All Rights Reserved.</p>
+        </div>
+      </div>
+    </footer>
   );
 }
 
