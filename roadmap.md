@@ -1,0 +1,4 @@
+- [x] Expand the story, bespoke, experience, journal, and stores pages with complete sections.
+- [x] Add supporting content to collection and product pages.
+- [x] Make shared navigation and all new sections responsive on mobile.
+- [x] Verify the key shopping journey on desktop and mobile.
