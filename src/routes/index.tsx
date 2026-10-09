@@ -67,7 +67,7 @@ function Index() {
   const [activeSlide, setActiveSlide] = useState(0);
 useEffect(() => {
   const timer = setInterval(() => {
-    setActiveSlide((current) => (current + 1) % 5);
+    setActiveSlide((current) => (current + 1) % 3);
   }, 5000);
 
   return () => clearInterval(timer);
@@ -77,107 +77,67 @@ useEffect(() => {
     .slice(0, 4);
 
   const slides = [
-    {
-      image: hero,
-      eyebrow: "A Symbol of Your Story",
-      title: "More Than Jewellery,",
-      highlight: "A Deeper You.",
-      description:
-        "Timeless designs. Deeper meanings. Jewellery that becomes a part of you.",
-      primary: "Explore Collections",
-      primaryLink: "/collections",
-      secondary: "Watch Our Story",
-      features: [
-        "Heritage",
-        "Craftsmanship",
-        "Modern Luxury",
-        "Timeless Beauty",
-      ],
-      cardImage: hero,
-      cardTop: "Step Into",
-      cardBottom: "Dharma",
-    },
-    {
-      image: necklace,
-      eyebrow: "The Art of Adornment",
-      title: "Crafted With Heritage,",
-      highlight: "Worn With Soul.",
-      description:
-        "Discover timeless necklaces shaped by Indian heritage, intricate craftsmanship and modern luxury.",
-      primary: "Shop Necklaces",
-      primaryLink: "/collections",
-      secondary: "Discover Heritage",
-      features: [
-        "22K Gold",
-        "Fine Polki",
-        "Handcrafted",
-        "Indian Heritage",
-      ],
-      cardImage: necklace,
-      cardTop: "Explore",
-      cardBottom: "Necklaces",
-    },
-    {
-      image: ring,
-      eyebrow: "A Signature Of You",
-      title: "Every Ring",
-      highlight: "Holds A Story.",
-      description:
-        "Signature rings designed with precious stones, refined details and a character that feels uniquely yours.",
-      primary: "Explore Rings",
-      primaryLink: "/collections",
-      secondary: "Our Craft",
-      features: [
-        "Signature Pieces",
-        "Precious Stones",
-        "Fine Details",
-        "Made For You",
-      ],
-      cardImage: ring,
-      cardTop: "Discover",
-      cardBottom: "Signature Rings",
-    },
-    {
-      image: earrings,
-      eyebrow: "Elegance In Every Detail",
-      title: "Beauty That Speaks",
-      highlight: "Without Words.",
-      description:
-        "Elegant earrings crafted to bring effortless beauty, refined detail and modern grace to every occasion.",
-      primary: "Shop Earrings",
-      primaryLink: "/collections",
-      secondary: "View Collection",
-      features: [
-        "Elegant Forms",
-        "Fine Craft",
-        "Rare Stones",
-        "Modern Grace",
-      ],
-      cardImage: earrings,
-      cardTop: "Explore",
-      cardBottom: "Earrings",
-    },
-    {
-      image: bracelet,
-      eyebrow: "Designed Around You",
-      title: "Wear Your Story",
-      highlight: "Every Day.",
-      description:
-        "Contemporary bracelets finished by hand, combining pure craftsmanship with effortless everyday luxury.",
-      primary: "Shop Bracelets",
-      primaryLink: "/collections",
-      secondary: "Discover Dharma",
-      features: [
-        "Contemporary",
-        "Hand Finished",
-        "Pure Craft",
-        "Everyday Luxury",
-      ],
-      cardImage: bracelet,
-      cardTop: "Step Into",
-      cardBottom: "Your Story",
-    },
-  ];
+  {
+    image: hero,
+    eyebrow: "A Symbol of Your Story",
+    title: "More Than Jewellery,",
+    highlight: "A Deeper You.",
+    description:
+      "Timeless designs. Deeper meanings. Jewellery that becomes a part of you.",
+    primary: "Explore Collections",
+    primaryLink: "/collections",
+    secondary: "Watch Our Story",
+    features: [
+      "Heritage",
+      "Craftsmanship",
+      "Modern Luxury",
+      "Timeless Beauty",
+    ],
+    cardImage: hero,
+    cardTop: "Step Into",
+    cardBottom: "Dharma",
+  },
+  {
+    image: necklace,
+    eyebrow: "The Art of Adornment",
+    title: "Crafted With Heritage,",
+    highlight: "Worn With Soul.",
+    description:
+      "Discover timeless necklaces shaped by Indian heritage, intricate craftsmanship and modern luxury.",
+    primary: "Shop Necklaces",
+    primaryLink: "/collections",
+    secondary: "Discover Heritage",
+    features: [
+      "22K Gold",
+      "Fine Polki",
+      "Handcrafted",
+      "Indian Heritage",
+    ],
+    cardImage: necklace,
+    cardTop: "Explore",
+    cardBottom: "Necklaces",
+  },
+  {
+    image: ring,
+    eyebrow: "A Signature Of You",
+    title: "Every Ring",
+    highlight: "Holds A Story.",
+    description:
+      "Signature rings designed with precious stones, refined details and a character that feels uniquely yours.",
+    primary: "Explore Rings",
+    primaryLink: "/collections",
+    secondary: "Our Craft",
+    features: [
+      "Signature Pieces",
+      "Precious Stones",
+      "Fine Details",
+      "Made For You",
+    ],
+    cardImage: ring,
+    cardTop: "Discover",
+    cardBottom: "Signature Rings",
+  },
+];
 
   const slide = slides[activeSlide];
 
@@ -340,82 +300,83 @@ useEffect(() => {
 
                   {/* PRIMARY BUTTON */}
                   <Link
-                    to={slide.primaryLink}
-                    className="
-                      group
-                      inline-flex
-                      h-11
-                      items-center
-                      gap-3
-                      bg-[#f3dca9]
-                      px-5
-                      text-[10px]
-                      font-semibold
-                      uppercase
-                      tracking-[0.14em]
-                      text-black
-                      transition-all
-                      duration-300
-                      hover:bg-white
-                      sm:h-12
-                      sm:px-6
-                    "
-                  >
-                    {slide.primary}
+    to={slide.primaryLink}
+    className="
+      group
+      inline-flex
+      h-11
+      items-center
+      gap-3
+      bg-[#D6B06A]
+      px-5
+      text-[10px]
+      font-semibold
+      uppercase
+      tracking-[0.14em]
+      text-[#17100C]
+      transition-all
+      duration-300
+      hover:bg-[#E2C27D]
+      sm:h-12
+      sm:px-6
+    "
+  >
+    {slide.primary}
 
-                    <ArrowRight
-                      className="
-                        h-3.5
-                        w-3.5
-                        transition-transform
-                        duration-300
-                        group-hover:translate-x-1
-                      "
-                    />
-                  </Link>
-
+    <ArrowRight
+      className="
+        h-3.5
+        w-3.5
+        transition-transform
+        duration-300
+        group-hover:translate-x-1
+      "
+    />
+  </Link>
                   {/* SECONDARY BUTTON */}
-                  <Link
-                    to="/our-story"
-                    className="
-                      group
-                      flex
-                      items-center
-                      gap-3
-                      text-[10px]
-                      font-medium
-                      uppercase
-                      tracking-[0.16em]
-                      text-white
-                    "
-                  >
-                    <span
-                      className="
-                        grid
-                        h-11
-                        w-11
-                        place-items-center
-                        rounded-full
-                        border
-                        border-white/60
-                        transition-all
-                        duration-300
-                        group-hover:border-[#d9b36c]
-                        group-hover:bg-white/10
-                      "
-                    >
-                      <Play
-                        className="
-                          ml-0.5
-                          h-3
-                          w-3
-                          fill-white
-                        "
-                      />
-                    </span>
+              {/* SECONDARY BUTTON */}
+<Link
+  to="/our-story"
+  className="
+    group
+    flex
+    items-center
+    gap-3
+    text-[10px]
+    font-medium
+    uppercase
+    tracking-[0.16em]
+    text-white
+  "
+>
+  <span
+    className="
+      grid
+      h-11
+      w-11
+      place-items-center
+      rounded-full
+      border
+      border-[#D6B06A]
+      text-[#D6B06A]
+      transition-all
+      duration-300
+      group-hover:bg-[#D6B06A]
+      group-hover:text-[#17100C]
+    "
+  >
+    <Play
+      className="
+        ml-0.5
+        h-3
+        w-3
+        fill-current
+      "
+    />
+  </span>
 
-                    {slide.secondary}
-                  </Link>
+  {slide.secondary}
+</Link>
                 </div>
               </div>
 
@@ -643,9 +604,9 @@ useEffect(() => {
                 /
               </span>
 
-              <span className="text-[9px] tracking-[0.2em] text-white/40">
-                05
-              </span>
+             <span className="text-[9px] tracking-[0.2em] text-white/40">
+  03
+</span>
             </div>
 
             {/* =================================================
@@ -663,13 +624,11 @@ useEffect(() => {
                 sm:left-12
               "
             >
-              {[
-                hero,
-                necklace,
-                ring,
-                earrings,
-                bracelet,
-              ].map((image, index) => (
+             {[
+  hero,
+  necklace,
+  ring,
+].map((image, index) => (
                 <button
                   key={index}
                   type="button"
@@ -1032,7 +991,7 @@ useEffect(() => {
             xl:text-5xl
           "
         >
-          Signature D
+          Signature Dharma
         </h2>
 
         <p

@@ -29,11 +29,29 @@ export function SiteHeader() {
     return () => window.removeEventListener("scroll", f);
   }, []);
   useEffect(() => setOpen(false), [pathname]);
+const location = useLocation();
+const [isScrolled, setIsScrolled] = useState(false);
 
+useEffect(() => {
+  const handleScroll = () => {
+    setIsScrolled(window.scrollY > 20);
+  };
+
+  handleScroll();
+  window.addEventListener("scroll", handleScroll);
+
+  return () => {
+    window.removeEventListener("scroll", handleScroll);
+  };
+}, []);
   return (
 
 <header
-  className={`fixed inset-x-0 top-0 z-40 border-b border-border transition-colors duration-500 bg-[oklch(28%_.1_15)]`}
+  className={`fixed inset-x-0 top-0 z-40 border-b transition-all duration-500 ${
+    isScrolled || location.pathname !== "/"
+      ? "border-border bg-[oklch(28%_.1_15)]"
+      : "border-transparent bg-transparent"
+  }`}
 >
 
       <div className="mx-auto grid max-w-[1440px] grid-cols-[minmax(0,1fr)_auto] items-center gap-3 px-5 py-4 lg:flex lg:justify-between lg:px-12">
@@ -61,7 +79,12 @@ export function SiteHeader() {
             <ShoppingBag className="h-4 w-4" />
             {count > 0 && <Badge n={count} />}
           </Link>
-          <Link to="/experience" className="btn-ghost-gold hidden !py-2 xl:inline-flex">Book Appointment</Link>
+          <Link
+  to="/experience"
+  className="hidden xl:inline-flex items-center justify-center rounded-none border border-[#D6B06A] bg-transparent px-5 py-2 text-[10px] font-medium uppercase tracking-[0.12em] text-[#D6B06A] transition-all duration-200 hover:bg-[#D6B06A] hover:text-[#17100C] xl:py-2"
+>
+  Book Appointment
+</Link>
           <Button variant="ghost" size="icon" className="lg:hidden" onClick={() => setOpen(!open)} aria-label={open ? "Close menu" : "Open menu"} aria-expanded={open}>
             {open ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
           </Button>
